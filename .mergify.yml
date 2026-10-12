@@ -1,0 +1,20 @@
+pull_request_rules:
+  - name: VM3 COCI2 controlled autoqueue 261012
+    conditions:
+      - base = vm3-coci2-impact-261012
+      - title ~= ^VM3 COCI2
+    actions:
+      queue:
+merge_queue:
+  mode: serial
+queue_rules:
+  - name: vm3-coci2-lab-261012
+    queue_conditions:
+      - base = vm3-coci2-impact-261012
+      - title ~= ^VM3 COCI2
+    merge_conditions:
+      - check-success = vm3-coci2-ci
+    branch_protection_injection_mode: merge
+    merge_method: merge-batch
+    batch_size: 2
+    batch_max_wait_time: 15 min
