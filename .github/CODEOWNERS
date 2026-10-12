@@ -1,1 +1,2 @@
 /.github/CODEOWNERS @livastic-vm3-mergify-lab-0911/vm3-code-owners-261010
+/security/guard.py @livastic-vm3-primary-tmp-260920
